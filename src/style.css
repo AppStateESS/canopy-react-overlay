@@ -1,0 +1,41 @@
+.pointer:hover {
+  cursor: pointer;
+}
+
+.cro-overlay {
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-color: white;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height : 100%;
+}
+
+.cro-header {
+  background-color: #F2F2F2;
+  border: 1px solid #D9D9D9;
+  margin-bottom : 1em;
+  height: 45px;
+}
+
+.cro-button {
+  padding: 5px;
+  float: right;
+}
+
+.cro-button:hover {
+  color : rgb(232, 57, 57);
+}
+
+.cro-title {
+  padding: 9px;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+.cro-children {
+  padding: 10px;
+}
