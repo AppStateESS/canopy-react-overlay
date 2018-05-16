@@ -1,7 +1,7 @@
 # canopy-react-overlay
 Creates a full page overlay modal thingy for Canopy/phpwebsite.
 
-##Props
+## Props
 
 |Name|Type|Desc.|
 |----|----|----|
