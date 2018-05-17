@@ -1,12 +1,12 @@
 {
   "name": "canopy-react-overlay",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "React overlay for Canopy/phpwebsite",
   "main": "build/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack --mode=development --watch",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
+    "prepublish": "rm -rf ./build && npm run build"
   },
   "repository": {
     "type": "git",

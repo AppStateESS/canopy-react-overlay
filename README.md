@@ -1,5 +1,5 @@
 # canopy-react-overlay
-Creates a full page overlay modal thingy for Canopy/phpwebsite.
+Creates a full page overlay modal thingy for AppStateESS/Canopy.
 
 ## Props
 
