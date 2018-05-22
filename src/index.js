@@ -29,14 +29,14 @@ export default class Overlay extends Component {
   }
 
   render() {
-    const zIndex = {zIndex : '2000'}
-    
+    const zIndex = {
+      zIndex: '2000'
+    }
+
     return (
       <div className="cro-overlay" style={zIndex}>
         <div className="cro-header">
-          <div
-            className="cro-button pointer"
-            onClick={this.close}>
+          <div className="cro-button pointer" onClick={this.close}>
             <i className="fas fa-2x fa-times"></i>
           </div>
           <div className="cro-title">{this.props.title}</div>
@@ -51,6 +51,6 @@ export default class Overlay extends Component {
 
 Overlay.propTypes = {
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.element,]),
-  close: PropTypes.func,
-  title: PropTypes.string
+  close: PropTypes.func.isRequired,
+  title: PropTypes.string,
 }
