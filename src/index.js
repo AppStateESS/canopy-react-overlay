@@ -11,8 +11,12 @@ export default class Overlay extends Component {
     this.close = this.close.bind(this)
   }
 
-  componentDidMount() {
-    this.lockBody()
+  componentDidUpdate() {
+    if (this.props.show) {
+      this.lockBody()
+    } else {
+      this.unlockBody()
+    }
   }
 
   lockBody() {
@@ -37,6 +41,10 @@ export default class Overlay extends Component {
       extraStyles.top = '5%'
     }
     
+    if (this.props.height) {
+      extraStyles.height = this.props.height
+    }
+
     if (this.props.overflow) {
       extraStyles.overflow = this.props.overflow
     }
@@ -67,6 +75,7 @@ Overlay.propTypes = {
   close: PropTypes.func.isRequired,
   title: PropTypes.string,
   width: PropTypes.string,
+  height: PropTypes.string,
   show: PropTypes.bool,
-  overflow: PropTypes.string,
+  overflow: PropTypes.string
 }
