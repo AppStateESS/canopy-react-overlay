@@ -1,6 +1,6 @@
 {
   "name": "canopy-react-overlay",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "React overlay for Canopy/phpwebsite",
   "main": "build/index.js",
   "scripts": {

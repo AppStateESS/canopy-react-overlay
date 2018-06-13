@@ -29,20 +29,33 @@ export default class Overlay extends Component {
   }
 
   render() {
-    const zIndex = {
-      zIndex: '2000'
+    const extraStyles = {}
+    if (this.props.width) {
+      extraStyles.width = this.props.width
+      extraStyles.height = 'auto'
+      extraStyles.position = 'absolute'
+      extraStyles.top = '5%'
+    }
+    
+    if (this.props.overflow) {
+      extraStyles.overflow = this.props.overflow
     }
 
+    if (this.props.show === false) {
+      return <span></span>
+    }
     return (
-      <div className="cro-overlay" style={zIndex}>
-        <div className="cro-header">
-          <div className="cro-button pointer" onClick={this.close}>
-            <i className="fas fa-2x fa-times"></i>
+      <div className="cro-backing">
+        <div className="cro-overlay" style={extraStyles}>
+          <div className="cro-header">
+            <div className="cro-button pointer" onClick={this.close}>
+              <i className="fas fa-2x fa-times"></i>
+            </div>
+            <div className="cro-title">{this.props.title}</div>
           </div>
-          <div className="cro-title">{this.props.title}</div>
-        </div>
-        <div className="cro-children">
-          {this.props.children}
+          <div className="cro-children">
+            {this.props.children}
+          </div>
         </div>
       </div>
     )
@@ -50,7 +63,10 @@ export default class Overlay extends Component {
 }
 
 Overlay.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element,]),
+  children: PropTypes.node,
   close: PropTypes.func.isRequired,
   title: PropTypes.string,
+  width: PropTypes.string,
+  show: PropTypes.bool,
+  overflow: PropTypes.string,
 }
