@@ -16,13 +16,13 @@
 
 .cro-overlay {
   left: 50%;
-  position : relative;
-  transform : translateX(-50%);
+  position: relative;
+  transform: translateX(-50%);
   background-color: white;
   overflow-y: auto;
   overflow-x: hidden;
   width: 100%;
-  height : 100%;
+  height: 100%;
   z-index: 2010;
 }
 
@@ -51,4 +51,20 @@
 
 .cro-children {
   padding: 10px;
+}
+
+.canopy-react-overlay.fadein {
+  transition: opacity .4s ease-in-out;
+  -moz-transition: opacity .4s ease-in-out;
+  -webkit-transition: opacity .4s ease-in-out;
+}
+
+.canopy-react-overlay {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.canopy-react-overlay.show {
+  opacity : 1;
+  visibility: visible;
 }
