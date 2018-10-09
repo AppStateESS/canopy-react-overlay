@@ -1,4 +1,4 @@
-const webpack = require('webpack')
+/* global __dirname */
 const path = require('path')
 module.exports = {
   entry: './src/index.js',
@@ -20,7 +20,7 @@ module.exports = {
         include: path.resolve(__dirname, 'src'),
         loader: 'babel-loader',
         query: {
-          presets: ['env', 'react',]
+          presets: ['@babel/preset-env', '@babel/preset-react',]
         }
       }, {
         test: /\.css$/,
