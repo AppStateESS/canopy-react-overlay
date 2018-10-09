@@ -2,6 +2,12 @@
 Creates a full page overlay modal thingy for AppStateESS/Canopy. The parent
 class determines its viewable status. Use the close function prop to hide it.
 
+## Install
+```
+npm install --save-dev @essappstate/canopy-react-overlay
+```
+## Example
+
 ```
 <Overlay
   show={this.state.show}
