@@ -34,13 +34,40 @@ export default class Overlay extends Component {
 
   render() {
     const extraStyles = {}
+    let closeButton
+    let partialCloseButton
+    let header
+
+
     if (this.props.width) {
       extraStyles.width = this.props.width
       extraStyles.height = 'auto'
       extraStyles.position = 'absolute'
       extraStyles.top = '5%'
+      extraStyles.border = '2px solid white'
+      extraStyles.borderRadius = '6px'
+      partialCloseButton = (
+        <div className="cro-button-partial pointer" onClick={this.close}>
+          <i className="fas fa-2x fa-times"></i>
+        </div>
+      )
+    } else {
+      closeButton = (
+        <div className="cro-button pointer" onClick={this.close}>
+          <i className="fas fa-2x fa-times"></i>
+        </div>
+      )
     }
 
+    if (!this.props.width || this.props.width === '100%' || this.props.title.length > 0) {
+      header = (
+        <div className="cro-header">
+          {closeButton}
+          <div className="cro-title">{this.props.title}</div>
+        </div>
+      )
+    }
+    
     if (this.props.height) {
       extraStyles.height = this.props.height
     }
@@ -49,7 +76,7 @@ export default class Overlay extends Component {
       extraStyles.overflow = this.props.overflow
     }
 
-    let overlayClass =  []
+    let overlayClass = []
     overlayClass.push('canopy-react-overlay')
     if (this.props.show) {
       overlayClass.push('show')
@@ -57,17 +84,13 @@ export default class Overlay extends Component {
     if (this.props.fade) {
       overlayClass.push('fadein')
     }
-    
+
     return (
       <div className={overlayClass.join(' ')}>
         <div className="cro-backing">
+          {partialCloseButton}
           <div className="cro-overlay" style={extraStyles}>
-            <div className="cro-header">
-              <div className="cro-button pointer" onClick={this.close}>
-                <i className="fas fa-2x fa-times"></i>
-              </div>
-              <div className="cro-title">{this.props.title}</div>
-            </div>
+            {header}
             <div className="cro-children">
               {this.props.children}
             </div>
@@ -90,6 +113,6 @@ Overlay.propTypes = {
 }
 
 Overlay.defaultProps = {
-  fade : false,
-  show: false,
+  fade: false,
+  show: false
 }
