@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
-import './style.css'
+import './style.scss'
 
 export default class Overlay extends Component {
   constructor(props) {
@@ -39,7 +39,7 @@ export default class Overlay extends Component {
     let header
 
 
-    if (this.props.width) {
+    if (this.props.width && this.props.width !== '100%') {
       extraStyles.width = this.props.width
       extraStyles.height = 'auto'
       extraStyles.position = 'absolute'
@@ -58,7 +58,6 @@ export default class Overlay extends Component {
         </div>
       )
     }
-
     if (!this.props.width || this.props.width === '100%' || this.props.title.length > 0) {
       header = (
         <div className="cro-header">
@@ -114,5 +113,5 @@ Overlay.propTypes = {
 
 Overlay.defaultProps = {
   fade: false,
-  show: false
+  show: false,
 }
