@@ -23,8 +23,16 @@ module.exports = {
           presets: ['@babel/preset-env', '@babel/preset-react',]
         }
       }, {
-        test: /\.css$/,
-        loader: 'style-loader!css-loader',
+        test: /\.s?css$/,
+        use: [
+          "style-loader",
+          "css-loader", {
+            loader: "sass-loader",
+            options: {
+              implementation: require("dart-sass")
+            }
+          }
+        ]
       },
     ]
   },
