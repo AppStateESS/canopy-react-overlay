@@ -38,7 +38,6 @@ export default class Overlay extends Component {
     let partialCloseButton
     let header
 
-
     if (this.props.width && this.props.width !== '100%') {
       extraStyles.width = this.props.width
       extraStyles.height = 'auto'
@@ -48,17 +47,21 @@ export default class Overlay extends Component {
       extraStyles.borderRadius = '6px'
       partialCloseButton = (
         <div className="cro-button-partial pointer" onClick={this.close}>
-          <i className="fas fa-2x fa-times"></i>
+          <i className="fas fa-2x fa-times" />
         </div>
       )
     } else {
       closeButton = (
         <div className="cro-button pointer" onClick={this.close}>
-          <i className="fas fa-2x fa-times"></i>
+          <i className="fas fa-2x fa-times" />
         </div>
       )
     }
-    if (!this.props.width || this.props.width === '100%' || this.props.title.length > 0) {
+    if (
+      !this.props.width ||
+      this.props.width === '100%' ||
+      this.props.title.length > 0
+    ) {
       header = (
         <div className="cro-header">
           {closeButton}
@@ -66,7 +69,7 @@ export default class Overlay extends Component {
         </div>
       )
     }
-    
+
     if (this.props.height) {
       extraStyles.height = this.props.height
     }
@@ -90,9 +93,7 @@ export default class Overlay extends Component {
           {partialCloseButton}
           <div className="cro-overlay" style={extraStyles}>
             {header}
-            <div className="cro-children">
-              {this.props.children}
-            </div>
+            <div className="cro-children">{this.props.children}</div>
           </div>
         </div>
       </div>
@@ -114,4 +115,5 @@ Overlay.propTypes = {
 Overlay.defaultProps = {
   fade: false,
   show: false,
+  title: ''
 }
