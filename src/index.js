@@ -86,12 +86,16 @@ export default class Overlay extends Component {
     if (this.props.fade) {
       overlayClass.push('fadein')
     }
+    let panelClass = 'cro-overlay'
+    if (this.props.cname) {
+      panelClass = panelClass + ' ' + this.props.cname
+    }
 
     return (
       <div className={overlayClass.join(' ')}>
         <div className="cro-backing">
           {partialCloseButton}
-          <div className="cro-overlay" style={extraStyles}>
+          <div className={panelClass} style={extraStyles}>
             {header}
             <div className="cro-children">{this.props.children}</div>
           </div>
@@ -102,6 +106,7 @@ export default class Overlay extends Component {
 }
 
 Overlay.propTypes = {
+  cname: PropTypes.string,
   fade: PropTypes.bool,
   children: PropTypes.node,
   close: PropTypes.func.isRequired,
