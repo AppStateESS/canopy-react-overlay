@@ -1,12 +1,12 @@
 {
   "name": "@essappstate/canopy-react-overlay",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "React overlay for Canopy/phpwebsite",
   "main": "build/index.js",
   "scripts": {
     "dev": "webpack --mode=development --watch",
     "build": "webpack --mode=production",
-    "prepublish": "rm -rf ./build && npm run build"
+    "prepare": "rm -rf ./build && npm run build"
   },
   "repository": {
     "type": "git",
@@ -27,9 +27,9 @@
     "react-dom": "^16.3.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.0",
-    "@babel/preset-react": "^7.9.4",
+    "@babel/core": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
     "babel-loader": "^8.1.0",
     "css-loader": "^1.0.1",
     "dart-sass": "^1.25.0",
@@ -38,7 +38,7 @@
     "react-dom": "^16.13.1",
     "sass-loader": "^7.3.1",
     "style-loader": "^0.23.1",
-    "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11"
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
   }
 }
