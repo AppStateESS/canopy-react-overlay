@@ -9,6 +9,8 @@ npm install --save-dev @essappstate/canopy-react-overlay
 ## Example
 
 ```
+import Overlay from '@essappstate/canopy-react-overlay'
+
 <Overlay
   show={this.state.show}
   close={this.toggleTheShowVariable}
